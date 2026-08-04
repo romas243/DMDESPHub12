@@ -201,5 +201,3 @@ Nama repository harus tetap:
 ```text
 DMDESPHub12
 ```
-
-Sebelum publikasi, ganti placeholder `OWNER` pada `library.properties`, `library.json`, dan `RELEASE-CHECKLIST.md` dengan username atau organisasi GitHub pemilik repository.
