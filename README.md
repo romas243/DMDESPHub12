@@ -23,9 +23,7 @@ DMDESPHub12 Disp(3, 1);
 - Guard flash/OTA: `DMDESPHub12RefreshGuard`
 - Base bitmap internal: `DMDESPHub12Bitmap`
 - Prefix macro: `DMDESPHUB12_`
-
-Paket ini sengaja **tidak** menyediakan `DMDESP.h`, class `DMDESP`, `Bitmap.h`, atau class `Bitmap`. Dengan demikian DMDESP asli dan DMDESPHub12 dapat terpasang berdampingan tanpa ambigu pada resolver library Arduino, dan tidak menghasilkan duplicate symbol dari class bitmap ketika keduanya dipakai dalam satu project.
-
+- 
 ## Fitur utama
 
 - ESP8266 Timer0 hard refresh; scan panel tidak bergantung pada kecepatan `loop()`.
