@@ -1,0 +1,33 @@
+{
+  "name": "DMDESPHub12",
+  "version": "1.1.0",
+  "description": "DMDESPHub12 is an open-source, frame-synchronized HUB12/P10 display library for ESP8266, designed for flicker-free operation in WiFi-enabled applications using Timer0 hard refresh, SPI FIFO transfer, double buffering, and synchronized frame swapping",
+  "keywords": [
+    "DMDESPHub12",
+    "DMDESP",
+    "DMD",
+    "P10",
+    "HUB12",
+    "ESP8266",
+    "Timer0",
+    "double-buffer"
+	"flicker-free"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/romas243/DMDESPHub12.git"
+  },
+  "authors": [
+    {
+      "name": "Bonny Useful / ElektronMart"
+    },
+    {
+      "name": "Southern Storm Software"
+    },
+    {
+      "name": "DMDESPHub12 M. Lutfi Sofiudin Romas"
+    }
+  ],
+  "frameworks": "arduino",
+  "platforms": "espressif8266"
+}
