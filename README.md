@@ -26,6 +26,7 @@ DMDESPHub12 Disp(3, 1);
 - 
 ## Fitur utama
 
+- Flicker-Free engine display untuk panel P10 HUB12.
 - ESP8266 Timer0 hard refresh; scan panel tidak bergantung pada kecepatan `loop()`.
 - SPI1/HSPI FIFO untuk mengurangi durasi dan stack ISR.
 - Swap framebuffer tersinkron tepat sebelum phase 0.
@@ -33,7 +34,6 @@ DMDESPHub12 Disp(3, 1);
 - `DMDESPHub12RefreshGuard` untuk operasi flash, filesystem, EEPROM, dan OTA.
 - Diagnostik ISR, overrun, utilization, swap, dan timeout.
 - Target konservatif untuk panel 1x1 hingga 6x1 HUB12.
-- Brightness 0–1023 yang konsisten pada ESP8266 core 2.x dan 3.x.
 
 ## Instalasi
 
@@ -71,8 +71,6 @@ void loop() {
 Jangan memanggil `Disp.refresh()` secara manual setelah `Disp.start()` aktif. Timer0 dan SPI1/HSPI harus dianggap sebagai resource eksklusif library.
 
 ## Example yang disertakan
-
-Semua example pada paket ini sudah menggunakan pola DMDESPHub12 v1.1.0 yang benar:
 
 1. `Basic3x1FrameSync` — pergantian dua frame dan diagnostik FrameSync.
 2. `SmoothText3x1` — running text nonblocking dengan double buffer.
@@ -170,21 +168,6 @@ swapTimeouts    = 0
 
 DMDESPHub12 dirancang untuk satu instance aktif. Jangan menggunakan Timer0 atau SPI1/HSPI untuk peripheral lain selama refresh aktif. Perangkat seperti SD card, TFT, LoRa, W5500, dan sensor SPI tidak boleh berbagi HSPI secara bersamaan dengan panel P10.
 
-## Migrasi dari DMDESP atau versi HardRefresh lama
-
-```cpp
-// Lama
-#include <DMDESP.h>
-DMDESP Disp(3, 1);
-DMDESPRefreshGuard guard(Disp);
-
-// Baru
-#include <DMDESPHub12.h>
-DMDESPHub12 Disp(3, 1);
-DMDESPHub12RefreshGuard guard(Disp);
-```
-
-API gambar, brightness, start/stop, double buffer, swap, dan diagnostik tetap mengikuti cabang FrameSync v1.1.0.
 
 ## Atribusi dan lisensi
 
