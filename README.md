@@ -54,7 +54,6 @@ DMDESPHub12 Disp(3, 1);
 void setup() {
   Disp.setDoubleBuffer(true);
   Disp.setBrightness(150);
-  Disp.setRefreshIntervalUs(1000);
   Disp.setFont(ElektronMart6x8);
 
   Disp.clear();
