@@ -94,7 +94,7 @@ Setelah refresh aktif, setiap perubahan frame diselesaikan dengan `swapBuffers()
 
 ## Frame-synchronized swap
 
-Pada v1.1.0, `swapBuffers()` meminta pertukaran pointer dan menunggu hingga ISR mencapai batas frame berikutnya. Pertukaran dilakukan tepat sebelum phase 0 dibaca, sehingga phase 0–3 dalam satu full scan berasal dari framebuffer yang sama.
+Panel P10 menggunakan 1/4 scan. Pada v1.1.0, `swapBuffers()` meminta pertukaran pointer dan menunggu hingga ISR mencapai batas frame berikutnya. Pertukaran frame dilakukan tepat sebelum phase 0 dibaca, sehingga phase 0–3 dalam satu full scan berasal dari framebuffer yang sama.
 
 ```cpp
 Disp.clear();
